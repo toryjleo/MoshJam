@@ -45,7 +45,7 @@ public class AiManager : MonoBehaviour
 
         foreach (Ai_Enemy Ai in AiPool)
         {
-            if (Ai.isAlive == false)
+            if (Ai.IsAlive() == false)
             {
                 Ai.gameObject.SetActive(false);
                 Debug.Log("AI DEATH");

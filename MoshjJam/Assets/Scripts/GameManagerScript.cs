@@ -9,6 +9,7 @@ public class GameManagerScript : MonoBehaviour
 
     public TimerScript timer;
     public EndScreenScript endScreen;
+    public PlayerScript player;
 
     // Methods
     private IEnumerator WaitAndPrint(float waitTime) 
@@ -31,6 +32,10 @@ public class GameManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*if (Input.GetKeyDown(KeyCode.Space)) 
+        {
+            player.TakeDamage(1);
+        }*/
         // Check if timer is out, if timer out, start coroutine to show text and then 
         if (timer.TimeIsUp()) 
         {
@@ -39,7 +44,12 @@ public class GameManagerScript : MonoBehaviour
             StartCoroutine(coroutine);
         }
         // Check if 0 lives
-
+        if (player.IsAlive() == false) 
+        {
+            endScreen.GameFailed();
+            IEnumerator coroutine = WaitAndPrint(END_SCREEN_TIME);
+            StartCoroutine(coroutine);
+        }
         
     }
 }
