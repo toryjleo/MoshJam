@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -500,6 +500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 38826346}
   Ai_Prefab: {fileID: 1916728068804812193, guid: 408fa548acbbd1342a2d03aa658eda2a, type: 3}
+  Gun_Prefab: {fileID: 4345623059121657363, guid: 4e66ef344607da74ea8749c432988283, type: 3}
   SpawnRate: 1
   FirstWave: 5
   PlayerV: {x: 0, y: 0, z: 0}

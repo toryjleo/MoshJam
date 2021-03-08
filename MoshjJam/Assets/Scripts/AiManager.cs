@@ -6,6 +6,7 @@ public class AiManager : MonoBehaviour
 {
     public GameObject player;
     public GameObject Ai_Prefab;
+    public GunScript Gun_Prefab;
     private List<Ai_Enemy> AiPool;
     public int SpawnRate;
     public int FirstWave; // number of AI starting to spawn 
@@ -23,7 +24,11 @@ public class AiManager : MonoBehaviour
             //This creates a list of game objects and adds them to the scene,
             //Then the Ai Componenets are extracted and put into a List called AiPool 
             GameObject newAI = Instantiate(Ai_Prefab, SpawnPoint, Quaternion.identity);
-            AiPool.Add(newAI.GetComponent<Ai_Enemy>());
+            Ai_Enemy enemy = newAI.GetComponent<Ai_Enemy>();
+            GunScript gun =Instantiate(Gun_Prefab, SpawnPoint, Quaternion.identity);
+            enemy.EquipGun(gun);
+            AiPool.Add(enemy);
+
         }
         
 
