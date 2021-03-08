@@ -8,8 +8,9 @@ public class PawnScript : MonoBehaviour
     public GameObject bullet;
 
     public GameObject bulletSpawnPoint;
-    public float waitTime;
-
+    public float coolDown;
+    public float movementSpeed;
+    public Vector3 spawnLocation;
     public bool isAlive;
 
     // Methods 
@@ -30,14 +31,14 @@ public class PawnScript : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    //This is the Last 
+    public virtual void Start()
     {
         isAlive = true;
+        coolDown = 3;
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+    
 }
