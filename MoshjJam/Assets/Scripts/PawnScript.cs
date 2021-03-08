@@ -5,28 +5,28 @@ using UnityEngine;
 public class PawnScript : MonoBehaviour
 {
     // Variables
-    public GameObject bullet;
 
-    public GameObject bulletSpawnPoint;
     public float coolDown;
     public float movementSpeed;
     public Vector3 spawnLocation;
     private bool isAlive;
     public int health;
 
+    public GunScript equippedGun;
+    public GameObject gunParent;
+
+    private Vector3 gunRelLocation = new Vector3(0.55f, 0.2f, 0.62f);
+
     // Methods 
     public virtual void Shoot(Vector3 shootDir) 
     {
-        Transform bulletTransform = Instantiate(bullet.transform, bulletSpawnPoint.transform.position, Quaternion.identity);
-        BulletScript bulletScript = bulletTransform.gameObject.GetComponent<BulletScript>();
-        if (bulletScript != null)
+        if (equippedGun != null) 
         {
-            bulletScript.SetDirection(shootDir);
-
+            equippedGun.Shoot(shootDir);
         }
-        else
+        else 
         {
-            Debug.Log("BITCH");
+            Debug.Log("Does not have gun");
         }
 
     }
@@ -38,6 +38,18 @@ public class PawnScript : MonoBehaviour
         {
             isAlive = false;
         }
+    }
+
+    public void EquipGun(GunScript newGun) 
+    {
+        if (equippedGun != null)
+        {
+            equippedGun.transform.parent = null; // Drop previous gun
+        }
+        newGun.transform.parent = gunParent.transform; // Get new gun
+        newGun.transform.localPosition = gunRelLocation;
+        equippedGun = newGun;
+
     }
 
     public bool IsAlive() 

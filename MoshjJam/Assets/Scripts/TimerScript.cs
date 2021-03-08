@@ -5,7 +5,7 @@ using TMPro;
 
 public class TimerScript : MonoBehaviour
 {
-    private const float MAX_TIME = 5.0f;
+    private const float MAX_TIME = 90.0f;
     public float curTime;
 
     private bool timeIsUp;

@@ -10,6 +10,7 @@ public class GameManagerScript : MonoBehaviour
     public TimerScript timer;
     public EndScreenScript endScreen;
     public PlayerScript player;
+    public GunScript gunToEquip; // Hacked code
 
     // Methods
     private IEnumerator WaitAndPrint(float waitTime) 
@@ -27,6 +28,8 @@ public class GameManagerScript : MonoBehaviour
     void Start()
     {
         timer.Init();
+
+        player.EquipGun(gunToEquip); // Hacked code
     }
 
     // Update is called once per frame

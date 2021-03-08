@@ -68,10 +68,13 @@ public class PlayerScript : PawnScript
         // Shooting
         if (Input.GetMouseButtonDown(0)) 
         {
-            Vector3 shootDir = mouseLastPos - bulletSpawnPoint.transform.position;
-            shootDir.y = 0;
-            shootDir.Normalize();
-            Shoot(shootDir);
+            if (equippedGun != null)
+            {
+                Vector3 shootDir = mouseLastPos - equippedGun.transform.position;
+                shootDir.y = 0;
+                shootDir.Normalize();
+                Shoot(shootDir);
+            }
         }
     }
 
