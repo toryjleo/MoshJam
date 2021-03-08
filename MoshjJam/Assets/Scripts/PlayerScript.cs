@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerScript : PawnScript
 {
     // Variables
-    public float movementSpeed = 1;
+    
     public GameObject camera;
 
     public GameObject playerObject;
@@ -20,9 +20,11 @@ public class PlayerScript : PawnScript
 
 
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
-        
+        movementSpeed = 1;
+
+        base.Start();
     }
 
     // Update is called once per frame
