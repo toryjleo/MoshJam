@@ -11,7 +11,8 @@ public class PawnScript : MonoBehaviour
     public float coolDown;
     public float movementSpeed;
     public Vector3 spawnLocation;
-    public bool isAlive;
+    private bool isAlive;
+    public int health;
 
     // Methods 
     public virtual void Shoot(Vector3 shootDir) 
@@ -28,6 +29,20 @@ public class PawnScript : MonoBehaviour
             Debug.Log("BITCH");
         }
 
+    }
+
+    public void TakeDamage(int damage) 
+    {
+        health -= damage;
+        if (health <= 0) 
+        {
+            isAlive = false;
+        }
+    }
+
+    public bool IsAlive() 
+    {
+        return isAlive;
     }
 
     // Start is called before the first frame update

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerScript : PawnScript
 {
     // Variables
-    
+    private const int PLAYER_START_HEALTH = 5;
     public GameObject camera;
 
     public GameObject playerObject;
@@ -22,7 +22,11 @@ public class PlayerScript : PawnScript
     // Start is called before the first frame update
     public override void Start()
     {
+
         movementSpeed = 15;
+
+        health = PLAYER_START_HEALTH;
+
 
         base.Start();
     }
