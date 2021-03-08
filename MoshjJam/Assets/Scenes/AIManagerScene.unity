@@ -130,6 +130,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4207194057118014233, guid: df5efd53932c5704f83a29b39ca1de31, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4207194057704197783, guid: df5efd53932c5704f83a29b39ca1de31, type: 3}
+      propertyPath: movementSpeed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 4207194057704197785, guid: df5efd53932c5704f83a29b39ca1de31, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -177,6 +185,10 @@ PrefabInstance:
     - target: {fileID: 4207194057704197786, guid: df5efd53932c5704f83a29b39ca1de31, type: 3}
       propertyPath: m_Name
       value: PlayerHolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 4207194057704197786, guid: df5efd53932c5704f83a29b39ca1de31, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df5efd53932c5704f83a29b39ca1de31, type: 3}
@@ -369,7 +381,7 @@ Transform:
   m_GameObject: {fileID: 761270083}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.03, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -450,13 +462,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 794746511}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 23.69, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &2005505432
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,7 +501,7 @@ MonoBehaviour:
   player: {fileID: 38826346}
   Ai_Prefab: {fileID: 1916728068804812193, guid: 408fa548acbbd1342a2d03aa658eda2a, type: 3}
   SpawnRate: 1
-  FirstWave: 1
+  FirstWave: 5
   PlayerV: {x: 0, y: 0, z: 0}
 --- !u!4 &2005505434
 Transform:

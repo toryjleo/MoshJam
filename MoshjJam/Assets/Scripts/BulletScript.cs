@@ -28,9 +28,24 @@ public class BulletScript : MonoBehaviour
         transform.Translate(direction * Time.deltaTime * speed);
         maxDistance += 1 * Time.deltaTime;
 
+        
+
         if (maxDistance >= 5) 
         {
             Destroy(this.gameObject);
         }
     }
+
+    /*private void OnTriggerEvent(Collider collider)
+    {
+        if(collider.gameObject.tag == "Bullet")
+        {
+            GameObject.Destroy(collider.game)
+            GameObject.Destroy(this.gameObject);
+            
+        }
+
+        
+    }*/
+
 }

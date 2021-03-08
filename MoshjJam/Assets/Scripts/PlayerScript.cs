@@ -22,7 +22,7 @@ public class PlayerScript : PawnScript
     // Start is called before the first frame update
     public override void Start()
     {
-        movementSpeed = 1;
+        movementSpeed = 15;
 
         base.Start();
     }
