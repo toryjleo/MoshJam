@@ -10,10 +10,7 @@ public class PlayerScript : PawnScript
 
     public GameObject playerObject;
 
-    public GameObject bullet;
 
-    public GameObject bulletSpawnPoint;
-    public float waitTime;
 
     private Vector3 mouseLastPos = Vector3.zero;
 
@@ -21,23 +18,6 @@ public class PlayerScript : PawnScript
 
 
 
-    void Shoot() 
-    {
-        Transform bulletTransform = Instantiate(bullet.transform, bulletSpawnPoint.transform.position, Quaternion.identity);
-        BulletScript bulletScript = bulletTransform.gameObject.GetComponent<BulletScript>();
-        if (bulletScript != null)
-        {
-            Vector3 shootDir = mouseLastPos - bulletSpawnPoint.transform.position;
-            shootDir.y = 0;
-            shootDir.Normalize();
-            bulletScript.SetDirection(shootDir);
-
-        }
-        else
-        {
-            Debug.Log("BITCH");
-        }
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -85,7 +65,10 @@ public class PlayerScript : PawnScript
         // Shooting
         if (Input.GetMouseButtonDown(0)) 
         {
-            Shoot();
+            Vector3 shootDir = mouseLastPos - bulletSpawnPoint.transform.position;
+            shootDir.y = 0;
+            shootDir.Normalize();
+            Shoot(shootDir);
         }
     }
 
