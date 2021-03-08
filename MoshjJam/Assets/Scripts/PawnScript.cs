@@ -66,6 +66,17 @@ public class PawnScript : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("HIT");
 
-    
+        GameObject.Destroy(other.gameObject);
+        //play effect at some point 
+        // reduce health 
+        GameObject.Destroy(this.gameObject);
+
+    }
+
+
+
 }
